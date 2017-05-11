@@ -1,4 +1,4 @@
-float R = 4.7e3;
+float R = 4700;
 float C = 0;
 volatile long tStart = 0;
 volatile long tEnd = 0;
@@ -18,10 +18,11 @@ void loop(){
   if(tEnd > 0){
     T = tEnd - tStart;
     C = (T*1000)/(1.1*R);
-    Serial.println(C);
+//    Serial.println(C);
     tStart = 0;
     tEnd = 0; 
   }
+  Serial.println(analogRead(A3)*5.0/1024);
 }
 
 
